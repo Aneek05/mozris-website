@@ -22,29 +22,36 @@ export default function ContactUs() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  
-  try {
-    const response = await fetch("https://mozris-backend.onrender.com/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const result = await response.json();
-
-    if (response.ok) {
-      alert("Message sent successfully!");
-      setForm({ name: "", email: "", phone: "", service: "", message: "" });
-    } else {
-      alert(result.error || "Something went wrong. Please try again.");
+    // Email validation regex
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in|co\.in)$/;
+    if (!emailPattern.test(form.email)) {
+      alert("Please enter a valid email ending with .com, .in or .co.in");
+      return;
     }
-  } catch (error) {
-    console.error("Error:", error);
-    alert("Error sending message. Please try again later.");
-  }
-};
+
+    try {
+      const response = await fetch("https://mozris-backend.onrender.com/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        setForm({ name: "", email: "", phone: "", service: "", message: "" });
+      } else {
+        alert(result.error || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error sending message. Please try again later.");
+    }
+  };
 
   const handleWhatsApp = () => {
     const phone = "917757803925";
@@ -87,34 +94,80 @@ export default function ContactUs() {
       <section className="py-16 px-6 max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-10">Get in Touch</h2>
         <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 grid grid-cols-1 gap-6">
-          <input type="text" name="name" placeholder="Full Name" value={form.name} onChange={handleChange} required className="border border-gray-300 rounded px-4 py-2 w-full" />
-          <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required className="border border-gray-300 rounded px-4 py-2 w-full" />
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+            className="border border-gray-300 rounded px-4 py-2 w-full"
+          />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in|co\.in)$"
+            className="border border-gray-300 rounded px-4 py-2 w-full"
+          />
+
           <div className="flex items-center border border-gray-300 rounded px-2 py-2 bg-white">
-  <span className="text-sm mr-2 flex items-center">
-    <img src="/india-flag.png" alt="IN" className="h-4 w-6 mr-1" />
-    +91
-  </span>
-  <input
-    type="tel"
-    name="phone"
-    placeholder="10-digit mobile number"
-    value={form.phone}
-    onChange={handleChange}
-    required
-    className="w-full outline-none"
-    maxLength="10"
-    pattern="[0-9]{10}"
-  />
-</div>
-          <select name="service" value={form.service} onChange={handleChange} required className="border border-gray-300 rounded px-4 py-2 w-full">
+            <span className="text-sm mr-2 flex items-center">
+              <img src="/india-flag.png" alt="IN" className="h-4 w-6 mr-1" />
+              +91
+            </span>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="10-digit mobile number"
+              value={form.phone}
+              onChange={handleChange}
+              required
+              className="w-full outline-none"
+              maxLength="10"
+              pattern="[0-9]{10}"
+            />
+          </div>
+
+          <select
+            name="service"
+            value={form.service}
+            onChange={handleChange}
+            required
+            className="border border-gray-300 rounded px-4 py-2 w-full"
+          >
             <option value="">Select a Service</option>
             {services.map((service, idx) => (
               <option key={idx} value={service}>{service}</option>
             ))}
           </select>
-          <textarea name="message" rows="5" placeholder="Message" value={form.message} onChange={handleChange} required className="border border-gray-300 rounded px-4 py-2 w-full" />
-          <button type="submit" className="bg-green-700 hover:bg-green-800 text-white font-semibold py-2 px-6 rounded-md">Send Message</button>
-          <button type="button" onClick={handleWhatsApp} className="mt-2 text-center inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md text-sm font-medium">
+
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Message"
+            value={form.message}
+            onChange={handleChange}
+            required
+            className="border border-gray-300 rounded px-4 py-2 w-full"
+          />
+
+          <button
+            type="submit"
+            className="bg-green-700 hover:bg-green-800 text-white font-semibold py-2 px-6 rounded-md"
+          >
+            Send Message
+          </button>
+
+          <button
+            type="button"
+            onClick={handleWhatsApp}
+            className="mt-2 text-center inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md text-sm font-medium"
+          >
             💬 Message us on WhatsApp
           </button>
         </form>
