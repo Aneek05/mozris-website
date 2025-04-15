@@ -158,16 +158,23 @@ export default function AboutUs() {
           </div>
         </div>
         <style>
-          {`
-            @keyframes slide {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-100%); }
-            }
-            .animate-slide {
-              animation: slide 40s linear infinite;
-            }
-          `}
-        </style>
+{`
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-slide {
+    animation: slide 20s linear infinite;
+  }
+
+  @media (max-width: 768px) {
+    .animate-slide {
+      animation-duration: 10s; /* ⏩ Faster on mobile */
+    }
+  }
+`}
+</style>
       </section>
 
       {/* Footer */}
