@@ -116,7 +116,7 @@ export default function Services() {
             <ul className="space-y-2 text-sm text-gray-300">
               <li>📍 <a href="https://maps.app.goo.gl/vtkt6jUwSVToLkaG9?g_st=aw" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 underline">Location</a></li>
               <li>📧 contact@mozris.com</li>
-              <li>📞 +91 8208105920</li>
+              <li>📞 +91 7757803925</li>
             </ul>
           </div>
         </div>

@@ -85,7 +85,7 @@ export default function AboutUs() {
       <h3 className="text-xl font-semibold">Ninad Joshi</h3>
       <p className="text-sm text-gray-600">Co-Founder & Culinary Strategist</p>
       <p className="mt-2 text-gray-700 text-sm">
-        A Hotel Management Graduate and professional chef with experience of 20 years.
+        Ninad is a seasoned hospitality professional with over 20+ years of experience in food service operations, corporate catering, and institutional dining. His leadership, strategic insight, and commitment to operational excellence have played a vital role in establishing Mozris Hospitality as a trusted name in the industry.
       </p>
     </div>
     <div>
@@ -93,7 +93,7 @@ export default function AboutUs() {
       <h3 className="text-xl font-semibold">Aishwarya Tanpure</h3>
       <p className="text-sm text-gray-600">Co-Founder & Operations Head</p>
       <p className="mt-2 text-gray-700 text-sm">
-        With deep experience in operations and brand management, Aishwarya ensures flawless execution of Mozris’ catering services.
+        Aishwarya brings dynamic energy and a modern perspective to the business. With a strong background in operations and client experience, she ensures that every Mozris engagement is marked by precision, quality, and client satisfaction.
       </p>
     </div>
   </div>
@@ -206,7 +206,7 @@ export default function AboutUs() {
      	   </a>
    	   </li>
     	   <li>📧 contact@mozris.com</li>
-     	   <li>📞 +91 8208105920</li>
+     	   <li>📞 +91 7757803925</li>
   	   </ul>
 	  </div>
         </div>

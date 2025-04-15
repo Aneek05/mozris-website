@@ -89,7 +89,23 @@ export default function ContactUs() {
         <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 grid grid-cols-1 gap-6">
           <input type="text" name="name" placeholder="Full Name" value={form.name} onChange={handleChange} required className="border border-gray-300 rounded px-4 py-2 w-full" />
           <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required className="border border-gray-300 rounded px-4 py-2 w-full" />
-          <input type="tel" name="phone" placeholder="Phone Number" value={form.phone} onChange={handleChange} required className="border border-gray-300 rounded px-4 py-2 w-full" />
+          <div className="flex items-center border border-gray-300 rounded px-2 py-2 bg-white">
+  <span className="text-sm mr-2 flex items-center">
+    <img src="/india-flag.png" alt="IN" className="h-4 w-6 mr-1" />
+    +91
+  </span>
+  <input
+    type="tel"
+    name="phone"
+    placeholder="10-digit mobile number"
+    value={form.phone}
+    onChange={handleChange}
+    required
+    className="w-full outline-none"
+    maxLength="10"
+    pattern="[0-9]{10}"
+  />
+</div>
           <select name="service" value={form.service} onChange={handleChange} required className="border border-gray-300 rounded px-4 py-2 w-full">
             <option value="">Select a Service</option>
             {services.map((service, idx) => (
@@ -132,7 +148,7 @@ export default function ContactUs() {
             <ul className="space-y-2 text-sm text-gray-300">
               <li>📍 <a href="https://maps.app.goo.gl/vtkt6jUwSVToLkaG9?g_st=aw" target="_blank" rel="noopener noreferrer" className="hover:text-orange-400 underline">Location</a></li>
               <li>📧 contact@mozris.com</li>
-              <li>📞 +91 8208105920</li>
+              <li>📞 +91 7757803925</li>
             </ul>
           </div>
         </div>
