@@ -118,6 +118,7 @@ export default function Homepage() {
               <li><a href="/about" className="hover:text-orange-400">About Us</a></li>
               <li><a href="#services" className="hover:text-orange-400">Services</a></li>
               <li><a href="/contact" className="hover:text-orange-400">Contact Us</a></li>
+              <li><a href="/privacy-policy" className="hover:text-orange-400">Privacy Policy</a></li>
             </ul>
           </div>
           <div>

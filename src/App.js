@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Services from "./pages/Services";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
 	<Route path="/contact" element={<ContactUs />} />
 	<Route path="/services" element={<Services />} />
+	<Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </Router>
   );
