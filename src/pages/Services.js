@@ -92,7 +92,7 @@ export default function Services() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-10">
           <div>
             <img src="/mozris-logo.png" alt="Mozris Logo" className="max-h-16 md:max-h-20 w-auto object-contain" />
-            <p className="text-sm">Sr No 54, Plot No 113, Handewadi Rd,<br />Swami Vivekanand Industrial Estate,<br />Hadapsar Haveli Pune, 411028</p>
+            <p className="text-sm">Sr. No 54, Plot No 113, Handewadi Rd,<br />Swami Vivekanand Industrial Estate,<br />Hadapsar, Haveli Pune, 411028</p>
           </div>
           <div>
             <h4 className="font-bold text-lg mb-3">Menu</h4>
